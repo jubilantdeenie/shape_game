@@ -1,76 +1,25 @@
 import React, { Component } from 'react';
+import { View, Text, AppRegistry, StyleSheet } from 'react-vr';
 
-import { AppRegistry, asset, Pano, View, Text,
-  Cylinder, Box, Sphere, Plane } from 'react-vr';
-
-
-export default class shape_game extends Component {
+class ShapeGame extends Component {
   render() {
     return (
       <View>
-        <Pano source={asset('BRC_scissor_lift.jpg')}></Pano>
-        <Box
-          dimWidth={0.5}
-          dimHeight={0.5}
-          dimDepth={0.5}
-          wireframe={true}
-          style={{
-            color: '#e2fa46',
-            transform: [
-              {translate: [0, 2, -3]},
-              {translateY: 1},
-              {translateX: -2.5},
-              {rotateY: 45},
-              {rotateZ: 45}
-            ]
-          }}
-          />
-          <Cylinder
-            dimHeight={0.5}
-            radiusBottom={0.5}
-            radiusTop={0.5}
-            segments={15}
-            wireframe={true}
-            style={{
-              color: '#f2d8f0',
-              transform: [
-                {translate: [0, 1.5, -3]},
-                {translateX: -3},
-                {rotateY: 45},
-                {rotateZ: 45}
-              ]
-            }}
-            />
-            <Sphere
-            radius={0.5}
-            widthSegments={10}
-            heightSegments={10}
-            texture={'http://i.imgur.com/bEBqA.jpg'}
-            style={{
-              color: '#aad',
-              transform: [
-                {translate: [1, 0, -3]},
-                {rotateY: 45}
-              ]
-            }}
-            />
-            <Plane
-              dimHeight={2}
-              dimWidth={5}
-              texture={'http://i.imgur.com/3FAR9Kf.jpg'}
-              style={{
-                transform: [
-                  {translate: [0, 0, -5]},
-                  {rotateX: -65}
-                ]
-              }}
-              />
+        <Text style={styles.text}> Find the Odd Shape!</Text>
       </View>
     )
   }
-};
+}
 
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 0.5,
+    textAlign: 'center',
+    color: '#fff',
+    transform: [
+      {translate: [0, 2, -5]}
+    ]
+  }
+});
 
-AppRegistry.registerComponent('shape_game', () => shape_game);
-
-// Venice photo credit: Sitoo <a href="http://www.flickr.com/photos/7470842@N04/35279275953">360 panorama at Piazza San Marco, Venezia, Italia</a> via <a href="http://photopin.com">photopin</a> <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">(license)</a>
+AppRegistry. registerComponent('shape_game', () => ShapeGame);
