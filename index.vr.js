@@ -1,29 +1,46 @@
 import React, { Component } from 'react';
 
-import { AppRegistry, asset, Pano, View, Text, Box } from 'react-vr';
+import { AppRegistry, asset, Pano, View, Text,
+  Cylinder, Box } from 'react-vr';
 
 
 export default class shape_game extends Component {
   render() {
     return (
       <View>
-        <Pano source={asset('venice.jpg')}></Pano>
+        <Pano source={asset('BRC_scissor_lift.jpg')}></Pano>
         <Box
           dimWidth={0.5}
           dimHeight={0.5}
           dimDepth={0.5}
-          wireFrame={true}
+          wireframe={true}
           style={{
-            color: '#dd2222',
+            color: '#e2fa46',
             transform: [
-              {translate: [0, 0, -3]},
+              {translate: [0, 2, -3]},
               {translateY: 1},
-              {translateX: -0.5},
+              {translateX: -2.5},
               {rotateY: 45},
               {rotateZ: 45}
             ]
           }}
           />
+          <Cylinder
+            dimHeight={0.5}
+            radiusBottom={0.5}
+            radiusTop={0.5}
+            segments={15}
+            wireframe={true}
+            style={{
+              color: '#f2d8f0',
+              transform: [
+                {translate: [0, 1.5, -3]},
+                {translateX: -3},
+                {rotateY: 45},
+                {rotateZ: 45}
+              ]
+            }}
+            />
       </View>
     )
   }
