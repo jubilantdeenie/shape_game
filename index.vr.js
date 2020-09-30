@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { AppRegistry, asset, Pano, View, Text,
-  Cylinder, Box } from 'react-vr';
+  Cylinder, Box, Sphere, Plane } from 'react-vr';
 
 
 export default class shape_game extends Component {
@@ -41,6 +41,30 @@ export default class shape_game extends Component {
               ]
             }}
             />
+            <Sphere
+            radius={0.5}
+            widthSegments={10}
+            heightSegments={10}
+            texture={'http://i.imgur.com/bEBqA.jpg'}
+            style={{
+              color: '#aad',
+              transform: [
+                {translate: [1, 0, -3]},
+                {rotateY: 45}
+              ]
+            }}
+            />
+            <Plane
+              dimHeight={2}
+              dimWidth={5}
+              texture={'http://i.imgur.com/3FAR9Kf.jpg'}
+              style={{
+                transform: [
+                  {translate: [0, 0, -5]},
+                  {rotateX: -65}
+                ]
+              }}
+              />
       </View>
     )
   }
