@@ -22,6 +22,7 @@ class ShapeGame extends Component {
               <View key={index}>
                 <Shape
                 shapeNum={shape}
+                colorNum={index}
                 transform={[{translate: [(index-1.5)*1.5, 0, -5]}]}
                 />
               </View>
